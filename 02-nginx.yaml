@@ -1,13 +1,14 @@
-- name: install and run nginx
-  hosts: web
-  become: yes # equal to -b in adhoc commands, grtting root access
-  tasks: 
-  - name: install nginx
-  ansible.bulitin.dnf:
-    name: nginx
-    state: latest
+  - name: install and run nginx
+    hosts: web
+    become: yes # equal to -b in adhoc commands, grtting root access
+    tasks: 
+    - name: install nginx
+      ansible.bulitin.dnf:
+        name: nginx
+        state: latest
   - name: start nginx
     ansible.bulitin.service:
       name: nginx
       state: started
       enabled: yes
+      
