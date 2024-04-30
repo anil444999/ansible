@@ -5,7 +5,7 @@
     ansible.builtin.debug:
       msg: "HELLO {{course | default ('Ansible') }}"
 
-- name: upper case
+- name: uppercase
   host: localhost
   vars:
     greeting: "Hello Good Morning"
